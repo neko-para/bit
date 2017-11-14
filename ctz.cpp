@@ -2,11 +2,12 @@ unsigned char ctz_mp[256];
 
 inline void ctz_init() {
     for (register unsigned i = 0; i < 256; ++i) {
-        register unsigned x = i;
+        register unsigned x = i & -i;
         while (x) {
             ++ctz_mp[i];
             x >>= 1;
         }
+        --ctz_mp[i];
     }
 }
 
