@@ -11,14 +11,14 @@ const unsigned char popcount_mp[] = {BIT8(0)};
 #define popcountb(x) popcount_mp[x]
 
 inline unsigned popcountw(register unsigned short x) {
-	return popcount_mp[(unsigned char)x] + popcount_mp[(unsigned char)(x >> 8)];
+    return popcount_mp[(unsigned char)x] + popcount_mp[(unsigned char)(x >> 8)];
 }
 
 inline unsigned popcountl(register unsigned x) {
-	return popcount_mp[(unsigned char)x] + popcount_mp[(unsigned char)(x >> 8)] + popcount_mp[(unsigned char)(x >> 16)] + popcount_mp[(unsigned char)(x >> 24)];
+    return popcount_mp[(unsigned char)x] + popcount_mp[(unsigned char)(x >> 8)] + popcount_mp[(unsigned char)(x >> 16)] + popcount_mp[(unsigned char)(x >> 24)];
 }
 
 inline unsigned popcountll(register unsigned long long x) {
-	return popcount_mp[(unsigned char)x] + popcount_mp[(unsigned char)(x >> 8)] + popcount_mp[(unsigned char)(x >> 16)] + popcount_mp[(unsigned char)(x >> 24)] +
-	popcount_mp[(unsigned char)(x >> 32)] + popcount_mp[(unsigned char)(x >> 40)] + popcount_mp[(unsigned char)(x >> 48)] + popcount_mp[(unsigned char)(x >> 56)];
+    return popcount_mp[(unsigned char)x] + popcount_mp[(unsigned char)(x >> 8)] + popcount_mp[(unsigned char)(x >> 16)] + popcount_mp[(unsigned char)(x >> 24)] +
+    popcount_mp[(unsigned char)(x >> 32)] + popcount_mp[(unsigned char)(x >> 40)] + popcount_mp[(unsigned char)(x >> 48)] + popcount_mp[(unsigned char)(x >> 56)];
 }
