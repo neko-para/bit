@@ -2,9 +2,9 @@ unsigned char clz_mp[256];
 
 #define clzb(v) (clz_mp[v])
 
-void clz_init() {
-	for (int i = 0; i < 256; ++i) {
-		int x = i;
+inline void clz_init() {
+	for (register unsigned i = 0; i < 256; ++i) {
+		register unsigned x = i;
 		while (x) {
 			++clz_mp[i];
 			x >>= 1;

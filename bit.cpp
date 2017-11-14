@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-#include "clz.c"
+#include "clz.cpp"
 
 int main() {
 	clz_init();
