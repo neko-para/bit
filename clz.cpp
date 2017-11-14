@@ -1,7 +1,5 @@
 unsigned char clz_mp[256];
 
-#define clzb(v) (clz_mp[v])
-
 inline void clz_init() {
     for (register unsigned i = 0; i < 256; ++i) {
         register unsigned x = i;
@@ -12,6 +10,8 @@ inline void clz_init() {
         clz_mp[i] = 8 - clz_mp[i];
     }
 }
+
+#define clzb(v) (clz_mp[v])
 
 inline unsigned clzw(register unsigned short v) {
     return (v >> 8) ? (clz_mp[v >> 8]) : (8 + clz_mp[v]);
